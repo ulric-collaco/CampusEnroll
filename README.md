@@ -1,87 +1,129 @@
 # Campus Enroll
 
+## Title of the Project
+Campus Enroll: Student Enrollment Form using JsonPowerDB
+
+## Description
+Campus Enroll is a web-based micro project that performs student record management using JsonPowerDB as the primary data store.
+
+The application is built with HTML, CSS, JavaScript, and jQuery, and follows a primary-key-first workflow.
+
+Project database details:
+1. Database Name: SCHOOL-DB
+2. Relation Name: STUDENT-TABLE
+3. Primary Key: Roll-No
+
+Input fields in the form:
+1. Roll-No
+2. Full-Name
+3. Class
+4. Birth-Date
+5. Address
+6. Enrollment-Date
+
 ## Table of Contents
 1. [Title of the Project](#title-of-the-project)
 2. [Description](#description)
 3. [Benefits of using JsonPowerDB](#benefits-of-using-jsonpowerdb)
-4. [Scope of Functionalities](#scope-of-functionalities)
-5. [Examples of Use](#examples-of-use)
-6. [Release History](#release-history)
-7. [Project Status](#project-status)
-8. [Sources](#sources)
-9. [Other Information](#other-information)
-
-## Title of the Project
-Campus Enroll - Student Enrollment Form using JsonPowerDB
-
-## Description
-Campus Enroll is a micro project built with HTML, CSS, and JavaScript to manage student enrollment records in JsonPowerDB.
-
-This project uses the following relation and database:
-- Database: SCHOOL-DB
-- Relation: STUDENT-TABLE
-- Primary Key: Roll-No
-
-Input fields:
-- Roll-No
-- Full-Name
-- Class
-- Birth-Date
-- Address
-- Enrollment-Date
-
-The form follows required business flow:
-- On load, only Roll-No is enabled; all other fields and action buttons are disabled.
-- If Roll-No does not exist, Save and Reset are enabled for new entry.
-- If Roll-No exists, data is loaded, Roll-No is locked, and Update and Reset are enabled.
-- Validation ensures no field is empty before Save or Update.
+4. [Illustrations](#illustrations)
+5. [Scope of Functionalities](#scope-of-functionalities)
+6. [Examples of Use](#examples-of-use)
+7. [How to Run](#how-to-run)
+8. [Release History](#release-history)
+9. [Project Status](#project-status)
+10. [Sources](#sources)
+11. [Other Information](#other-information)
 
 ## Benefits of using JsonPowerDB
-1. Simple and fast JSON-based API for database operations.
-2. Lightweight integration from frontend JavaScript without heavy backend setup.
-3. Good fit for micro projects and prototypes due to quick development cycle.
-4. Built-in support for key-based record retrieval (useful for primary key workflows).
-5. Reduced development time for CRUD-focused forms.
+1. Lightweight and fast JSON-based database interactions.
+2. Easy frontend integration without writing a full backend service.
+3. Suitable for micro projects and assignment-level CRUD systems.
+4. Key-based record operations simplify primary key workflows.
+5. Faster development and testing for form-based applications.
+
+## Illustrations
+Application flow:
+
+1. Page Load
+2. Only Roll-No enabled, other fields and buttons disabled
+3. User enters Roll-No
+4. System checks Roll-No in JsonPowerDB
+5. If Roll-No does not exist:
+   - Enable Save and Reset
+   - Enable remaining input fields
+   - Focus next field
+6. If Roll-No exists:
+   - Fetch and display existing data
+   - Disable Roll-No
+   - Enable Update and Reset
+   - Focus next field
+7. Save or Update record
+8. Return to initial state
 
 ## Scope of Functionalities
-1. Primary key check by Roll-No.
-2. Auto-switch between Create mode and Update mode.
-3. Save new student records to JsonPowerDB.
-4. Update existing student records in JsonPowerDB.
-5. Reset form to initial state with focus control.
-6. Status feedback for info, success, and error states.
+1. Initial form state handling as per assignment requirements.
+2. Primary key existence check using Roll-No.
+3. Automatic Create mode for new Roll-No values.
+4. Automatic Update mode for existing Roll-No values.
+5. Client-side validation for non-empty fields.
+6. Save operation to insert new records.
+7. Update operation to modify existing records.
+8. Reset operation to clear form and restore initial state.
+9. Visual status messages for info, success, and error scenarios.
 
 ## Examples of Use
-1. Add a new student:
-   - Enter a new Roll-No.
-   - Fill all fields.
+1. Create a new student record:
+   - Enter a Roll-No that does not exist.
+   - Fill all remaining fields.
    - Click Save.
+   - Observe success message and form reset.
 
-2. Update an existing student:
-   - Enter an existing Roll-No.
-   - Modify editable fields.
+2. Update an existing student record:
+   - Enter a Roll-No that already exists.
+   - Existing data loads automatically.
+   - Edit required fields.
    - Click Update.
+   - Observe success message and form reset.
 
-3. Reset the form:
-   - Click Reset.
-   - Form returns to initial state with cursor on Roll-No.
+3. Reset current operation:
+   - Click Reset at any point during create or update mode.
+   - Form returns to initial mode with focus on Roll-No.
+
+## How to Run
+1. Clone or download the repository.
+2. Open project folder in Visual Studio Code.
+3. Run the project with a local server extension (for example Live Server).
+4. Open index.html in browser through local server.
+5. Use the form and verify Save and Update behavior with JsonPowerDB.
 
 ## Release History
-- v1.0.0 - 2026-04-10
-  - Initial Campus Enroll release with JsonPowerDB integration.
-  - Implemented Save, Update, Reset workflow with required primary key logic.
-  - Added field validation and state-based UI control.
-  - Published code to GitHub: https://github.com/ulric-collaco/CampusEnroll
+1. v1.0.0 - 2026-04-10
+   - Initial release of Campus Enroll.
+   - JsonPowerDB connected with SCHOOL-DB and STUDENT-TABLE.
+   - Implemented required Save, Update, Reset workflow.
+   - Added non-empty validation for all fields.
+   - Added status messaging for better user feedback.
+   - Published to GitHub: https://github.com/ulric-collaco/CampusEnroll
 
 ## Project Status
-Completed for micro project submission.
+Submission-ready.
+
+Current state:
+1. Core assignment requirements completed.
+2. UI and workflow behavior completed.
+3. JsonPowerDB integration completed.
 
 ## Sources
-- JsonPowerDB official site: https://login2explore.com/jpdb/
-- JsonPowerDB API helper library used in project:
-  - https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js
+1. JsonPowerDB official website:
+   - https://login2explore.com/jpdb/
+2. JsonPowerDB helper library:
+   - https://login2explore.com/jpdb/resources/js/0.0.3/jpdb-commons.js
 
 ## Other Information
-- Frontend stack: HTML5, CSS3, JavaScript, jQuery
-- Database platform: JsonPowerDB
-- Repository: https://github.com/ulric-collaco/CampusEnroll
+1. Frontend stack: HTML5, CSS3, JavaScript, jQuery
+2. Database platform: JsonPowerDB
+3. Repository link: https://github.com/ulric-collaco/CampusEnroll
+4. Main files:
+   - index.html
+   - styles.css
+   - script.js
